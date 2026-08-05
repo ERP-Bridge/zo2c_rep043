@@ -1,0 +1,869 @@
+<mvc:View
+    controllerName="zo2c_rep043.controller.SalesOrder"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page
+        id="_IDGenPage1"
+        title="Sales Order Creation"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+
+        <content>
+            <VBox
+                id="_IDGenVBox"
+                class="sapUiMediumMargin">
+
+                <!-- Header -->
+                <Toolbar id="_IDGenToolbar2">
+                    <Button
+                        id="_IDGenButton5"
+                        text="Back"
+                        icon="sap-icon://nav-back"
+                        press=".onNavBack" />
+
+                    <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+
+                    <Button
+                        id="_IDGenButton6"
+                        text="Mail to..."
+                        icon="sap-icon://email" />
+
+                    <Button
+                        id="_IDGenButton7"
+                        text="Print"
+                        icon="sap-icon://print" />
+
+                    <Button
+                        id="_IDGenButton8"
+                        text="Export As..."
+                        icon="sap-icon://excel-attachment" />
+
+                    <Button
+                        id="_IDGenButton9"
+                        text="Save"
+                        icon="sap-icon://save"
+                        press=".onSave" />
+
+                    <Button
+                        id="_IDGenButton10"
+                        text="Confirm Sales Order"
+                        type="Emphasized"
+                        icon="sap-icon://accept"
+                        press=".onConfirmSalesOrder" />
+                </Toolbar>
+
+                <!-- Profit Center -->
+                <Panel
+                    id="_IDGenPanel1"
+                    class="sapUiMediumMarginTop">
+
+                    <HBox
+                        id="_IDGenHBox2"
+                        justifyContent="SpaceBetween">
+
+                        <VBox
+                            id="_IDGenVBox6"
+                            width="70%">
+                            <Label
+                                id="_IDGenLabel4"
+                                text="Profit center" />
+                            <Text
+                                id="_IDGenText17"
+                                text="Profit Center Name &amp; Number" />
+                        </VBox>
+
+                        <VBox
+                            id="_IDGenVBox7"
+                            width="20%">
+                            <Label
+                                id="_IDGenLabel5"
+                                text="Customer Approval" />
+                            <Input
+                                id="_IDGenInput"
+                                value="{selectedQuotation>approvalStatus}"
+                                editable="false"
+                                valueState="Success" />
+                        </VBox>
+                    </HBox>
+                </Panel>
+
+                <!-- Customer Section -->
+                <Panel
+                    id="_IDGenPanel2"
+                    class="sapUiMediumMarginTop">
+
+                    <VBox id="_IDGenVBox8">
+                        <HBox
+                            id="_IDGenHBox3"
+                            justifyContent="SpaceBetween">
+
+                            <VBox
+                                id="_IDGenVBox9"
+                                width="22%">
+                                <Label
+                                    id="_IDGenLabel6"
+                                    text="Sold to customer" />
+                                <Text
+                                    id="_IDGenText19"
+                                    text="[Description] - [Number]" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox10"
+                                width="22%">
+                                <Label
+                                    id="_IDGenLabel7"
+                                    text="Bill to customer" />
+                                <Text
+                                    id="_IDGenText20"
+                                    text="[Description] - [Number]" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox11"
+                                width="22%">
+                                <Label
+                                    id="_IDGenLabel8"
+                                    text="E-mail of contact" />
+                                <Text
+                                    id="_IDGenText21"
+                                    text="FirstName.lastname@company.com" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox25"
+                                width="22%">
+                                <Label
+                                    id="_IDGenLabel9"
+                                    text="EPM contract" />
+
+                                <HBox
+                                    id="_IDGenHBox4"
+                                    justifyContent="SpaceBetween">
+
+                                    <Text
+                                        id="_IDGenText59"
+                                        text="Select" />
+
+                                   <Button
+    id="_IDGenButton11"
+    icon="{
+        path: 'uiModel>/customerDetailsVisible',
+        formatter: '.formatEyeIcon'
+    }"
+    type="Emphasized"
+    press=".onToggleCustomerDetails" />
+                                </HBox>
+                            </VBox>
+                        </HBox>
+
+                        <HBox
+    id="_IDGenHBox12"
+    justifyContent="SpaceBetween"
+    class="sapUiMediumMarginTop"
+    visible="{uiModel>/customerDetailsVisible}">
+
+                            <VBox
+                                id="_IDGenVBox26"
+                                width="30%">
+                                <Label
+                                    id="_IDGenLabel15"
+                                    text="Sold to:" />
+
+                                <Text
+                                    id="_IDGenText84"
+                                    text="Name" />
+                                <Text
+                                    id="_IDGenText85"
+                                    text="Address" />
+                                <Text
+                                    id="_IDGenText86"
+                                    text="City" />
+                                <Text
+                                    id="_IDGenText87"
+                                    text="VAT number" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox27"
+                                width="30%">
+                                <Label
+                                    id="_IDGenLabel16"
+                                    text="Bill to:" />
+
+                                <Text
+                                    id="_IDGenText88"
+                                    text="Name" />
+                                <Text
+                                    id="_IDGenText89"
+                                    text="Address" />
+                                <Text
+                                    id="_IDGenText90"
+                                    text="City" />
+                                <Text
+                                    id="_IDGenText91"
+                                    text="VAT number" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox28"
+                                width="30%">
+                                <Label
+                                    id="_IDGenLabel17"
+                                    text="Ship to:" />
+
+                                <ComboBox
+                                    id="_IDGenComboBox"
+                                    width="100%">
+
+                                    <items>
+                                        <core:Item
+                                            id="_IDGenItem"
+                                            key="1"
+                                            text="Name Address City" />
+
+                                        <core:Item
+                                            id="_IDGenItem1"
+                                            key="2"
+                                            text="Name Address City" />
+
+                                        <core:Item
+                                            id="_IDGenItem2"
+                                            key="3"
+                                            text="Name Address City" />
+                                    </items>
+                                </ComboBox>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                </Panel>
+
+                <!-- Additional Information -->
+                <Panel
+                    id="_IDGenPanel3"
+                    headerText="Additional information :"
+                    class="sapUiMediumMarginTop">
+
+                    <TextArea
+                        id="_IDGenTextArea"
+                        width="100%"
+                        rows="5"
+                        placeholder="Placeholder" />
+                </Panel>
+
+                <!-- Service Details -->
+                <Panel
+                    id="_IDGenPanel6"
+                    class="sapUiMediumMarginTop">
+
+                    <VBox id="_IDGenVBox12">
+                        <HBox
+                            id="_IDGenHBox5"
+                            justifyContent="SpaceBetween">
+
+                            <VBox
+                                id="_IDGenVBox13"
+                                width="14%">
+                                <Label
+                                    id="_IDGenLabel10"
+                                    text="Service date from" />
+                                <Text
+                                    id="_IDGenText18"
+                                    text="[DD/MM/YYYY]" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox14"
+                                width="14%">
+                                <Label
+                                    id="_IDGenLabel11"
+                                    text="Service date to" />
+                                <Text
+                                    id="_IDGenText22"
+                                    text="[DD/MM/YYYY]" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox15"
+                                width="18%">
+                                <Label
+                                    id="_IDGenLabel12"
+                                    text="Event Name" />
+                                <Text
+                                    id="_IDGenText23"
+                                    text="Typed text" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox16"
+                                width="18%">
+                                <Label
+                                    id="_IDGenLabel13"
+                                    text="Customer PO num" />
+                                <Text
+                                    id="_IDGenText24"
+                                    text="Typed text" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox29"
+                                width="12%">
+                                <Label
+                                    id="_IDGenLabel18"
+                                    text="Currency" />
+                                <Text
+                                    id="_IDGenText25"
+                                    text="[ £.€.$. ]" />
+                            </VBox>
+
+                            <VBox
+                                id="_IDGenVBox30"
+                                width="5%">
+<Button
+    id="_IDGenButton12"
+    icon="{
+        path: 'uiModel>/serviceDetailsVisible',
+        formatter: '.formatEyeIcon'
+    }"
+    type="Emphasized"
+    press=".onToggleServiceDetails" />
+
+                            </VBox>
+                        </HBox>
+
+                       <VBox
+    id="_IDGenVBox31"
+    class="sapUiMediumMarginTop"
+    visible="{uiModel>/serviceDetailsVisible}">
+
+                            <Label
+                                id="_IDGenLabel19"
+                                text="Buyer reference" />
+
+                            <Text
+                                id="_IDGenText92"
+                                text="Typed text" />
+                        </VBox>
+                    </VBox>
+                </Panel>
+
+                <!-- Attachments -->
+                <Panel
+                    id="_IDGenPanel5"
+                    headerText="Attachments (3)"
+                    class="sapUiMediumMarginTop">
+
+                    <VBox id="_IDGenVBox32">
+                        <HBox
+                            id="_IDGenHBox6"
+                            justifyContent="End">
+
+                            <Button
+    id="_IDGenButton13"
+    icon="{
+        path: 'uiModel>/attachmentsVisible',
+        formatter: '.formatEyeIcon'
+    }"
+    type="Emphasized"
+    press=".onToggleAttachments" />
+                        </HBox>
+
+                        <Text
+    id="_IDGenText93"
+    text="Select the documents you wish to share with your contacts."
+    class="sapUiSmallMarginTop"
+    visible="{uiModel>/attachmentsVisible}" />
+
+                        <HBox
+                            id="_IDGenHBox13"
+                            justifyContent="SpaceBetween"
+                            class="sapUiMediumMarginTop">
+
+                            <VBox
+                                id="_IDGenVBox33"
+                                width="55%">
+                                <CheckBox
+                                    id="_IDGenCheckBox"
+                                    text="Long attached file name.ext"
+                                    selected="true" />
+
+                                <CheckBox
+                                    id="_IDGenCheckBox1"
+                                    text="Short att. F. name.ext" />
+
+                                <CheckBox
+                                    id="_IDGenCheckBox2"
+                                    text="Customer Approval.ext"
+                                    selected="true" />
+                            </VBox>
+
+                            <HBox
+                                id="_IDGenHBox14"
+                                width="40%">
+
+                                <Input
+                                    id="_IDGenInput7"
+                                    value="Additional document.jpg"
+                                    width="70%" />
+
+                                <Button
+                                    id="_IDGenButton21"
+                                    icon="sap-icon://search" />
+
+                                <Button
+                                    id="_IDGenButton22"
+                                    text="Upload"
+                                    type="Emphasized" />
+                            </HBox>
+                        </HBox>
+                    </VBox>
+                </Panel>
+
+                <!-- Items -->
+                <Panel
+                    id="_IDGenPanel7"
+                    headerText="Items"
+                    class="sapUiMediumMarginTop">
+
+                    <Table
+                        id="_IDGenTable"
+                        inset="false">
+
+                        <columns>
+                            <Column
+                                id="_IDGenColumn11"
+                                width="14%">
+                                <Text
+                                    id="_IDGenText26"
+                                    text="WBS" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn12"
+                                width="32%">
+                                <Text
+                                    id="_IDGenText27"
+                                    text="Article" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn13"
+                                width="10%">
+                                <Text
+                                    id="_IDGenText28"
+                                    text="Quantity" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn14"
+                                width="8%">
+                                <Text
+                                    id="_IDGenText29"
+                                    text="Unit price" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn15"
+                                width="8%">
+                                <Text
+                                    id="_IDGenText30"
+                                    text="Currency" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn16"
+                                width="8%">
+                                <Text
+                                    id="_IDGenText31"
+                                    text="NetTotal" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn17"
+                                width="6%">
+                                <Text
+                                    id="_IDGenText32"
+                                    text="VAT %" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn18"
+                                width="8%">
+                                <Text
+                                    id="_IDGenText33"
+                                    text="Gross" />
+                            </Column>
+
+                            <Column
+                                id="_IDGenColumn19"
+                                width="8%">
+                                <Text
+                                    id="_IDGenText34"
+                                    text="Actions" />
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem id="_IDGenColumnListItem1">
+                                <cells>
+                                    <VBox id="_IDGenVBox17">
+                                        <Text
+                                            id="_IDGenText35"
+                                            text="[Number+desc=17car.]" />
+                                        <Text
+                                            id="_IDGenText36"
+                                            text="Additional description" />
+                                    </VBox>
+
+                                    <VBox id="_IDGenVBox18">
+                                        <Text
+                                            id="_IDGenText37"
+                                            text="[Article Description=40car.]" />
+                                        <Text
+                                            id="_IDGenText38"
+                                            text="[Description]" />
+                                    </VBox>
+
+                                    <Input
+                                        id="_IDGenInput1"
+                                        value="Value" />
+
+                                    <Text
+                                        id="_IDGenText39"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText40"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText41"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText42"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText43"
+                                        text="Value" />
+
+                                    <HBox id="_IDGenHBox7">
+                                        <Button
+                                            id="_IDGenButton14"
+                                            icon="sap-icon://delete"
+                                            type="Transparent" />
+
+                                        <Button
+                                            id="_IDGenButton15"
+                                            icon="sap-icon://copy"
+                                            type="Transparent" />
+                                    </HBox>
+                                </cells>
+                            </ColumnListItem>
+
+                            <ColumnListItem id="_IDGenColumnListItem2">
+                                <cells>
+                                    <VBox id="_IDGenVBox19">
+                                        <Text
+                                            id="_IDGenText44"
+                                            text="[Number+desc=17car.]" />
+                                        <Text
+                                            id="_IDGenText45"
+                                            text="Additional description" />
+                                    </VBox>
+
+                                    <VBox id="_IDGenVBox20">
+                                        <Text
+                                            id="_IDGenText46"
+                                            text="[Article Description=40car.]" />
+                                        <Text
+                                            id="_IDGenText47"
+                                            text="[Description]" />
+                                    </VBox>
+
+                                    <Input
+                                        id="_IDGenInput2"
+                                        value="Value" />
+
+                                    <Text
+                                        id="_IDGenText48"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText49"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText50"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText51"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText52"
+                                        text="Value" />
+
+                                    <HBox id="_IDGenHBox8">
+                                        <Button
+                                            id="_IDGenButton16"
+                                            icon="sap-icon://delete"
+                                            type="Transparent" />
+
+                                        <Button
+                                            id="_IDGenButton17"
+                                            icon="sap-icon://copy"
+                                            type="Transparent" />
+                                    </HBox>
+                                </cells>
+                            </ColumnListItem>
+
+                            <ColumnListItem id="_IDGenColumnListItem77">
+                                <cells>
+                                    <VBox id="_IDGenVBox23">
+                                        <Text
+                                            id="_IDGenText73"
+                                            text="[Number+desc=17car.]" />
+                                        <Text
+                                            id="_IDGenText74"
+                                            text="Additional description" />
+                                    </VBox>
+
+                                    <VBox id="_IDGenVBox24">
+                                        <Text
+                                            id="_IDGenText75"
+                                            text="[Article Description=40car.]" />
+                                        <Text
+                                            id="_IDGenText76"
+                                            text="[Description]" />
+                                    </VBox>
+
+                                    <Input
+                                        id="_IDGenInput3"
+                                        value="Value" />
+
+                                    <Text
+                                        id="_IDGenText77"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText78"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText79"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText80"
+                                        text="Value" />
+
+                                    <Text
+                                        id="_IDGenText81"
+                                        text="Value" />
+
+                                    <HBox id="_IDGenHBox10">
+                                        <Button
+                                            id="_IDGenButton18"
+                                            icon="sap-icon://delete"
+                                            type="Transparent" />
+
+                                        <Button
+                                            id="_IDGenButton19"
+                                            icon="sap-icon://copy"
+                                            type="Transparent" />
+                                    </HBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+                    <HBox
+                        id="_IDGenHBox11"
+                        justifyContent="End">
+
+                        <Button
+                            id="_IDGenButton20"
+                            text="Add item"
+                            icon="sap-icon://add"
+                            type="Transparent" />
+                    </HBox>
+                </Panel>
+
+                <!-- Bottom Section -->
+                <HBox
+                    id="_IDGenHBox9"
+                    justifyContent="SpaceBetween"
+                    class="sapUiMediumMarginTop">
+
+                    <VBox
+                        id="_IDGenVBox21"
+                        width="58%">
+                        <Label
+                            id="_IDGenLabel14"
+                            text="Additional notes" />
+
+                        <TextArea
+                            id="_IDGenTextArea1"
+                            width="100%"
+                            rows="6"
+                            placeholder="Typed Text" />
+                    </VBox>
+
+                    <VBox
+                        id="_IDGenVBox22"
+                        width="38%">
+                        <Table
+                            id="_IDGenTable1"
+                            inset="false"
+                            fixedLayout="true">
+
+                            <columns>
+                                <Column
+                                    id="_IDGenColumn20"
+                                    width="35%">
+                                    <Text
+                                        id="_IDGenText53"
+                                        text="" />
+                                </Column>
+
+                                <Column
+                                    id="_IDGenColumn21"
+                                    width="25%">
+                                    <Text
+                                        id="_IDGenText54"
+                                        text="Total net" />
+                                </Column>
+
+                                <Column
+                                    id="_IDGenColumn22"
+                                    width="15%">
+                                    <Text
+                                        id="_IDGenText55"
+                                        text="VAT %" />
+                                </Column>
+
+                                <Column
+                                    id="_IDGenColumn23"
+                                    width="25%">
+                                    <Text
+                                        id="_IDGenText56"
+                                        text="Total gross" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem id="_IDGenColumnListItem3">
+                                    <cells>
+                                        <Text
+                                            id="_IDGenText58"
+                                            text="Total" />
+
+                                        <Text
+                                            id="_IDGenText57"
+                                            text="Number" />
+
+                                        <Text
+                                            id="_IDGenText60"
+                                            text="%" />
+
+                                        <Text
+                                            id="_IDGenText61"
+                                            text="{selectedQuotation>totalValue}" />
+                                    </cells>
+                                </ColumnListItem>
+
+                                <ColumnListItem id="_IDGenColumnListItem4">
+                                    <cells>
+                                        <Text
+                                            id="_IDGenText62"
+                                            text="Item #1" />
+
+                                        <Text
+                                            id="_IDGenText63"
+                                            text="Number" />
+
+                                        <Text
+                                            id="_IDGenText64"
+                                            text="%" />
+
+                                        <Input
+                                            id="_IDGenInput4"
+                                            width="6rem"
+                                            value="Number" />
+                                    </cells>
+                                </ColumnListItem>
+
+                                <ColumnListItem id="_IDGenColumnListItem5">
+                                    <cells>
+                                        <Text
+                                            id="_IDGenText65"
+                                            text="Item #n" />
+
+                                        <Text
+                                            id="_IDGenText66"
+                                            text="Number" />
+
+                                        <Text
+                                            id="_IDGenText67"
+                                            text="%" />
+
+                                        <Input
+                                            id="_IDGenInput5"
+                                            width="6rem"
+                                            value="Number" />
+                                    </cells>
+                                </ColumnListItem>
+
+                                <ColumnListItem id="_IDGenColumnListItem6">
+                                    <cells>
+                                        <Text
+                                            id="_IDGenText68"
+                                            text="Item #n+1" />
+
+                                        <Text
+                                            id="_IDGenText69"
+                                            text="Number" />
+
+                                        <Text
+                                            id="_IDGenText70"
+                                            text="%" />
+
+                                        <Input
+                                            id="_IDGenInput6"
+                                            width="6rem"
+                                            value="Number" />
+                                    </cells>
+                                </ColumnListItem>
+
+                                <ColumnListItem id="_IDGenColumnListItem7">
+                                    <cells>
+                                        <Text
+                                            id="_IDGenText71"
+                                            text="Total" />
+
+                                        <Text
+                                            id="_IDGenText72"
+                                            text="{selectedQuotation>totalValue}" />
+
+                                        <Text
+                                            id="_IDGenText82"
+                                            text="%" />
+
+                                        <Text
+                                            id="_IDGenText83"
+                                            text="{selectedQuotation>totalValue}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

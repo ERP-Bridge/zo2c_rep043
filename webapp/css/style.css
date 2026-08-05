@@ -1,0 +1,121 @@
+/* Dark overlay like Figma */
+.blackDialogOverlayActive .sapUiBLy {
+    background-color: #000000 !important;
+    opacity: 0.62 !important;
+}
+
+/* Main popup card */
+.figmaDialog.sapMDialog {
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    background-color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.36) !important;
+}
+
+/* Remove ugly outer border */
+.figmaDialog.sapMDialog:focus {
+    outline: none !important;
+}
+
+/* Header */
+.figmaDialog .sapMDialogTitleGroup {
+    min-height: 2.65rem !important;
+    height: 2.65rem !important;
+    padding: 0 0.75rem !important;
+    border-bottom: 1px solid #d9dee5 !important;
+    background-color: #ffffff !important;
+}
+
+/* Title text */
+.figmaDialog .sapMDialogTitle {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #1d2733 !important;
+    line-height: 2.65rem !important;
+}
+
+/* Body content */
+.figmaDialog .sapMDialogScrollCont {
+    padding: 0 !important;
+}
+
+.figmaDialogContent {
+    padding: 0.65rem 0.75rem 0.55rem 0.75rem !important;
+    background-color: #ffffff !important;
+}
+
+/* Message text */
+.figmaDialogText {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    color: #1d2733 !important;
+    white-space: normal !important;
+}
+
+/* Footer */
+.figmaDialog .sapMDialogFooter {
+    height: 2.7rem !important;
+    border-top: 1px solid #d9dee5 !important;
+    background-color: #ffffff !important;
+}
+
+/* Footer toolbar */
+.figmaDialog .sapMDialogFooter .sapMIBar {
+    height: 2.7rem !important;
+    padding: 0 0.55rem !important;
+    justify-content: flex-end !important;
+    background-color: #ffffff !important;
+}
+
+/* Button spacing */
+.figmaDialog .sapMBtn {
+    height: 2rem !important;
+    padding: 0 0.15rem !important;
+}
+
+/* Button inner */
+.figmaDialog .sapMBtnInner {
+    height: 1.75rem !important;
+    min-width: 3.65rem !important;
+    border-radius: 0.35rem !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    line-height: 1.65rem !important;
+}
+
+/* Transparent buttons */
+.figmaDialog .sapMBtnTransparent .sapMBtnInner {
+    color: #0064d9 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* Transparent button hover */
+.figmaDialog .sapMBtnTransparent:hover .sapMBtnInner {
+    background-color: #eef5ff !important;
+    border-color: transparent !important;
+}
+
+/* Blue primary button */
+.figmaDialog .sapMBtnEmphasized .sapMBtnInner {
+    background-color: #0a6ed1 !important;
+    border-color: #0a6ed1 !important;
+    color: #ffffff !important;
+}
+
+/* Blue primary hover */
+.figmaDialog .sapMBtnEmphasized:hover .sapMBtnInner {
+    background-color: #085caf !important;
+    border-color: #085caf !important;
+}
+
+/* Remove extra outlines around dialog */
+.figmaDialog .sapMDialogSection {
+    background-color: #ffffff !important;
+}
+
+/* Better center and no weird white outline */
+.sapMDialogBlockLayerInit {
+    background-color: #000000 !important;
+}

@@ -1,0 +1,348 @@
+<mvc:View
+    controllerName="zo2c_rep043.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page
+        id="view1Page"
+        showHeader="false">
+
+        <content>
+
+            <VBox
+                id="view1MainVBox"
+                class="sapUiLargeMargin">
+
+                <!-- Title -->
+                <Title
+                    id="view1Title"
+                    text="Quotation List"
+                    level="H2"
+                    class="sapUiMediumMarginBottom" />
+
+                <!-- Search Section -->
+                <Panel
+                    id="view1SearchPanel"
+                    class="sapUiMediumMarginBottom quotationSearchPanel">
+
+                    <headerToolbar>
+                        <Toolbar id="view1SearchToolbar">
+                            <Title
+                                id="view1SearchTitle"
+                                text="Search" />
+                        </Toolbar>
+                    </headerToolbar>
+
+                    <content>
+
+                        <HBox
+                            id="view1SearchHBox"
+                            width="100%"
+                            justifyContent="SpaceBetween"
+                            alignItems="End">
+
+                            <VBox
+                                id="view1CustomerBox"
+                                width="19%">
+                                <Label
+                                    id="view1CustomerLabel"
+                                    text="Customer" />
+                                <SearchField
+                                    id="view1CustomerSearch"
+                                    width="100%"
+                                    placeholder="Code + name" />
+                            </VBox>
+
+                            <VBox
+                                id="view1SoldToPartyBox"
+                                width="19%">
+                                <Label
+                                    id="view1SoldToPartyLabel"
+                                    text="Sold to party" />
+                                <SearchField
+                                    id="view1SoldToPartySearch"
+                                    width="100%"
+                                    placeholder="Code + name" />
+                            </VBox>
+
+                            <VBox
+                                id="view1BillToPartyBox"
+                                width="19%">
+                                <Label
+                                    id="view1BillToPartyLabel"
+                                    text="Bill to party" />
+                                <SearchField
+                                    id="view1BillToPartySearch"
+                                    width="100%"
+                                    placeholder="Code + name" />
+                            </VBox>
+
+                            <VBox
+                                id="view1ShipToPartyBox"
+                                width="19%">
+                                <Label
+                                    id="view1ShipToPartyLabel"
+                                    text="Ship to party" />
+                                <SearchField
+                                    id="view1ShipToPartySearch"
+                                    width="100%"
+                                    placeholder="Code + name" />
+                            </VBox>
+
+                            <VBox
+                                id="view1PoNumberBox"
+                                width="19%">
+                                <Label
+                                    id="view1PoNumberLabel"
+                                    text="PO Number" />
+                                <SearchField
+                                    id="view1PoNumberSearch"
+                                    width="100%"
+                                    placeholder="Code + name" />
+                            </VBox>
+
+                        </HBox>
+
+                    </content>
+
+                </Panel>
+
+                <!-- Action Buttons -->
+                <Toolbar
+                    id="view1ActionToolbar"
+                    design="Transparent"
+                    class="sapUiTinyMarginBottom">
+
+                    <ToolbarSpacer id="view1ActionToolbarSpacer" />
+
+                    <Button
+                        id="view1PrintButton"
+                        text="Print"
+                        icon="sap-icon://print"
+                        type="Transparent" />
+
+                    <Button
+                        id="view1CreateSalesOrderButton"
+                        text="Create Sales Order"
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        enabled="false"
+                        press=".onCreateSalesOrder"
+                        class="sapUiTinyMarginBegin" />
+
+                </Toolbar>
+
+                <!-- Table -->
+                <Table
+                    id="quotationTable"
+                    mode="MultiSelect"
+                    width="100%"
+                    fixedLayout="false"
+                    inset="false"
+                    class="quotationTable"
+                    selectionChange=".onQuotationSelectionChange"
+                    items="{quotationModel>/quotations}">
+
+                    <columns>
+
+                        <Column
+                            id="view1QNumberColumn"
+                            width="120px">
+                            <Text
+                                id="view1QNumberColumnText"
+                                text="Q. Number" />
+                        </Column>
+
+                        <Column
+                            id="view1CustomerColumn"
+                            width="260px">
+                            <Text
+                                id="view1CustomerColumnText"
+                                text="Customer" />
+                        </Column>
+
+                        <Column
+                            id="view1CreationDateColumn"
+                            width="130px">
+                            <Text
+                                id="view1CreationDateColumnText"
+                                text="Creation Date" />
+                        </Column>
+
+                        <Column
+                            id="view1PoNumberColumn"
+                            width="150px">
+                            <Text
+                                id="view1PoNumberColumnText"
+                                text="PO Number" />
+                        </Column>
+
+                        <Column
+                            id="view1ValidityDateColumn"
+                            width="130px">
+                            <Text
+                                id="view1ValidityDateColumnText"
+                                text="Validity date" />
+                        </Column>
+
+                        <Column
+                            id="view1TotalValueColumn"
+                            width="120px"
+                            hAlign="End">
+                            <Text
+                                id="view1TotalValueColumnText"
+                                text="Total Value" />
+                        </Column>
+
+                        <Column
+                            id="view1BilledColumn"
+                            width="90px"
+                            hAlign="Center">
+                            <Text
+                                id="view1BilledColumnText"
+                                text="Billed" />
+                        </Column>
+
+                        <Column
+                            id="view1BilledPercentColumn"
+                            width="95px"
+                            hAlign="Center">
+                            <Text
+                                id="view1BilledPercentColumnText"
+                                text="Billed %" />
+                        </Column>
+
+                        <Column
+                            id="view1ApprovalStatusColumn"
+                            width="190px">
+                            <Text
+                                id="view1ApprovalStatusColumnText"
+                                text="Approval Status" />
+                        </Column>
+
+                        <Column
+                            id="view1DateColumn"
+                            width="130px">
+                            <Text
+                                id="view1DateColumnText"
+                                text="Date" />
+                        </Column>
+
+                        <Column
+                            id="view1ActionsColumn"
+                            width="130px"
+                            hAlign="Center">
+                            <Text
+                                id="view1ActionsColumnText"
+                                text="Actions" />
+                        </Column>
+
+                    </columns>
+
+                    <items>
+
+                        <ColumnListItem id="view1QuotationRow">
+
+                            <cells>
+
+                                <!-- No press event here. Clicking quotation number will NOT navigate now. -->
+                                <Link
+                                    id="view1QNumberLink"
+                                    text="{quotationModel>qNumber}"
+                                    wrapping="false" />
+
+                                <Link
+                                    id="view1CustomerLink"
+                                    text="{quotationModel>customer}"
+                                    wrapping="true" />
+
+                                <Text
+                                    id="view1CreationDateText"
+                                    text="{quotationModel>creationDate}"
+                                    wrapping="false" />
+
+                                <Link
+                                    id="view1PoNumberLink"
+                                    text="{quotationModel>poNumber}"
+                                    wrapping="false" />
+
+                                <Text
+                                    id="view1ValidityDateText"
+                                    text="{quotationModel>validityDate}"
+                                    wrapping="false" />
+
+                                <Text
+                                    id="view1TotalValueText"
+                                    text="{quotationModel>totalValue}"
+                                    textAlign="End"
+                                    wrapping="false" />
+
+                                <Text
+                                    id="view1BilledText"
+                                    text="{quotationModel>billed}"
+                                    textAlign="Center"
+                                    wrapping="false" />
+
+                                <Text
+                                    id="view1BilledPercentText"
+                                    text="{quotationModel>billedPercent}"
+                                    textAlign="Center"
+                                    wrapping="false" />
+
+                                <ObjectStatus
+                                    id="view1ApprovalStatusObject"
+                                    text="{quotationModel>approvalStatus}"
+                                    icon="{
+                                        path: 'quotationModel>approvalStatus',
+                                        formatter: '.formatApprovalStatusIcon'
+                                    }"
+                                    state="{
+                                        path: 'quotationModel>approvalStatus',
+                                        formatter: '.formatApprovalStatusState'
+                                    }"
+                                    inverted="true"
+                                    class="approvalStatusBadge" />
+
+                                <Text
+                                    id="view1DateText"
+                                    text="{quotationModel>date}"
+                                    wrapping="false" />
+
+                                <HBox
+                                    id="view1ActionsHBox"
+                                    justifyContent="Center"
+                                    alignItems="Center"
+                                    class="quotationActionButtons">
+
+                                    <Button
+                                        id="view1RowPrintButton"
+                                        icon="sap-icon://print"
+                                        type="Transparent" />
+
+                                    <Button
+                                        id="view1RowDeleteButton"
+                                        icon="sap-icon://delete"
+                                        type="Transparent" />
+
+                                    <Button
+                                        id="view1RowShowButton"
+                                        icon="sap-icon://show"
+                                        type="Transparent" />
+
+                                </HBox>
+
+                            </cells>
+
+                        </ColumnListItem>
+
+                    </items>
+
+                </Table>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

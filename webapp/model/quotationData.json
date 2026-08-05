@@ -1,0 +1,121 @@
+{
+  "quotations": [
+    {
+      "qNumber": "BEQ308010",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Draft",
+      "statusState": "None",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308011",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Approved",
+      "statusState": "Success",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308012",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Rejected",
+      "statusState": "Error",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308013",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Customer Rejected",
+      "statusState": "Error",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308014",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Customer Review",
+      "statusState": "Information",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308015",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Draft",
+      "statusState": "None",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308016",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Rejected",
+      "statusState": "Error",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308017",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Approved",
+      "statusState": "Success",
+      "date": "17/08/2022"
+    },
+    {
+      "qNumber": "BEQ308018",
+      "customer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "creationDate": "19/10/2025",
+      "poNumber": "BE100-Services",
+      "validityDate": "09/10/2025",
+      "totalValue": "3245",
+      "billed": "12",
+      "billedPercent": "[%]",
+      "approvalStatus": "Sales Order",
+      "statusState": "Information",
+      "date": "17/08/2022"
+    }
+  ]
+}
