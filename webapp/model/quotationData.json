@@ -11,7 +11,112 @@
       "billedPercent": "[%]",
       "approvalStatus": "Draft",
       "statusState": "None",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Avenue Building 10, Brussels, Belgium, VAT BE0123456789",
+      "additionalInfo": "Placeholder",
+      "serviceDateFrom": "12/02/2025",
+      "serviceDateTo": "15/02/2025",
+      "eventName": "Typed text",
+      "customerPoNum": "5559753421",
+      "currency": "EUR",
+      "buyerReference": "Typed text",
+      "attachments": [
+        {
+          "name": "Long attached file name.ext",
+          "selected": true
+        },
+        {
+          "name": "Short att. F. name.ext",
+          "selected": false
+        },
+        {
+          "name": "Customer Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.2.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School B",
+          "quantity": "Value",
+          "unitPrice": "9.99",
+          "currency": "EUR",
+          "netTotal": "122,82",
+          "vat": "3",
+          "gross": "130.87"
+        },
+        {
+          "wbs": "BE.C0000002.2.2",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School B",
+          "quantity": "Value",
+          "unitPrice": "1.99",
+          "currency": "EUR",
+          "netTotal": "129,82",
+          "vat": "3",
+          "gross": "130.87"
+        },
+        {
+          "wbs": "BE.C0000002.2.3",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School B",
+          "quantity": "Value",
+          "unitPrice": "9.97",
+          "currency": "EUR",
+          "netTotal": "122,82",
+          "vat": "3",
+          "gross": "130.87"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "784 635"
+        },
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "55 000"
+        },
+        {
+          "label": "Item #n",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "2 500"
+        },
+        {
+          "label": "Item #n+1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "10 000"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "852 135"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308011",
@@ -24,7 +129,84 @@
       "billedPercent": "[%]",
       "approvalStatus": "Approved",
       "statusState": "Success",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Finance Office 20, Antwerp, Belgium, VAT BE9876543210",
+      "additionalInfo": "Placeholder",
+      "serviceDateFrom": "12/02/2025",
+      "serviceDateTo": "15/02/2025",
+      "eventName": "Typed text",
+      "customerPoNum": "5559753421",
+      "currency": "EUR",
+      "buyerReference": "Typed text",
+      "attachments": [
+        {
+          "name": "Long attached file name.ext",
+          "selected": true
+        },
+        {
+          "name": "Customer Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.2.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School B",
+          "quantity": "Value",
+          "unitPrice": "9.99",
+          "currency": "EUR",
+          "netTotal": "122,82",
+          "vat": "3",
+          "gross": "130.87"
+        },
+        {
+          "wbs": "BE.C0000002.2.2",
+          "wbsDescription": "Additional description :",
+          "article": "Consulting",
+          "articleDescription": "School C",
+          "quantity": "Value",
+          "unitPrice": "4.50",
+          "currency": "EUR",
+          "netTotal": "220,00",
+          "vat": "3",
+          "gross": "226.60"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "852 135"
+        },
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "55 000"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "907 135"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308012",
@@ -37,7 +219,56 @@
       "billedPercent": "[%]",
       "approvalStatus": "Rejected",
       "statusState": "Error",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Site C, Ghent, Belgium, VAT BE4567891230",
+      "additionalInfo": "Placeholder",
+      "serviceDateFrom": "12/02/2025",
+      "serviceDateTo": "15/02/2025",
+      "eventName": "Typed text",
+      "customerPoNum": "5559753421",
+      "currency": "EUR",
+      "buyerReference": "Typed text",
+      "attachments": [
+        {
+          "name": "Customer Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.2.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School B",
+          "quantity": "Value",
+          "unitPrice": "9.99",
+          "currency": "EUR",
+          "netTotal": "122,82",
+          "vat": "3",
+          "gross": "130.87"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "852 135"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308013",
@@ -50,7 +281,84 @@
       "billedPercent": "[%]",
       "approvalStatus": "Customer Rejected",
       "statusState": "Error",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Warehouse 12, Leuven, Belgium, VAT BE2233445566",
+      "additionalInfo": "Customer rejected quotation. Review required before creating order.",
+      "serviceDateFrom": "18/02/2025",
+      "serviceDateTo": "20/02/2025",
+      "eventName": "Customer Review Event",
+      "customerPoNum": "5559753422",
+      "currency": "EUR",
+      "buyerReference": "Buyer reference text",
+      "attachments": [
+        {
+          "name": "Customer rejection note.ext",
+          "selected": true
+        },
+        {
+          "name": "Customer Approval.ext",
+          "selected": false
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.3.1",
+          "wbsDescription": "Additional description :",
+          "article": "Medical Support",
+          "articleDescription": "School D",
+          "quantity": "Value",
+          "unitPrice": "7.25",
+          "currency": "EUR",
+          "netTotal": "210,00",
+          "vat": "3",
+          "gross": "216.30"
+        },
+        {
+          "wbs": "BE.C0000002.3.2",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "School D",
+          "quantity": "Value",
+          "unitPrice": "3.10",
+          "currency": "EUR",
+          "netTotal": "98,00",
+          "vat": "3",
+          "gross": "100.94"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "216 300"
+        },
+        {
+          "label": "Item #2",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "100 940"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "317 240"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308014",
@@ -63,7 +371,66 @@
       "billedPercent": "[%]",
       "approvalStatus": "Customer Review",
       "statusState": "Information",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Research Center 4, Brussels, Belgium, VAT BE3344556677",
+      "additionalInfo": "Quotation currently under customer review.",
+      "serviceDateFrom": "21/02/2025",
+      "serviceDateTo": "23/02/2025",
+      "eventName": "Review Meeting",
+      "customerPoNum": "5559753423",
+      "currency": "EUR",
+      "buyerReference": "Review buyer reference",
+      "attachments": [
+        {
+          "name": "Review Document.ext",
+          "selected": true
+        },
+        {
+          "name": "Pricing Sheet.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.4.1",
+          "wbsDescription": "Additional description :",
+          "article": "Consulting",
+          "articleDescription": "Office A",
+          "quantity": "Value",
+          "unitPrice": "12.50",
+          "currency": "EUR",
+          "netTotal": "350,00",
+          "vat": "3",
+          "gross": "360.50"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "360 500"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "360 500"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308015",
@@ -76,7 +443,84 @@
       "billedPercent": "[%]",
       "approvalStatus": "Draft",
       "statusState": "None",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Logistics Building 8, Antwerp, Belgium, VAT BE4455667788",
+      "additionalInfo": "Draft order information.",
+      "serviceDateFrom": "24/02/2025",
+      "serviceDateTo": "26/02/2025",
+      "eventName": "Draft Event",
+      "customerPoNum": "5559753424",
+      "currency": "EUR",
+      "buyerReference": "Draft buyer reference",
+      "attachments": [
+        {
+          "name": "Draft Attachment.ext",
+          "selected": false
+        },
+        {
+          "name": "Customer Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.5.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "Office B",
+          "quantity": "Value",
+          "unitPrice": "8.75",
+          "currency": "EUR",
+          "netTotal": "300,00",
+          "vat": "3",
+          "gross": "309.00"
+        },
+        {
+          "wbs": "BE.C0000002.5.2",
+          "wbsDescription": "Additional description :",
+          "article": "Support",
+          "articleDescription": "Office B",
+          "quantity": "Value",
+          "unitPrice": "6.20",
+          "currency": "EUR",
+          "netTotal": "180,00",
+          "vat": "3",
+          "gross": "185.40"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "309 000"
+        },
+        {
+          "label": "Item #2",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "185 400"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "494 400"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308016",
@@ -89,7 +533,62 @@
       "billedPercent": "[%]",
       "approvalStatus": "Rejected",
       "statusState": "Error",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Operations Center 6, Mechelen, Belgium, VAT BE5566778899",
+      "additionalInfo": "Rejected quotation data for testing.",
+      "serviceDateFrom": "27/02/2025",
+      "serviceDateTo": "28/02/2025",
+      "eventName": "Rejected Event",
+      "customerPoNum": "5559753425",
+      "currency": "EUR",
+      "buyerReference": "Rejected buyer reference",
+      "attachments": [
+        {
+          "name": "Rejection Reason.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.6.1",
+          "wbsDescription": "Additional description :",
+          "article": "Audit",
+          "articleDescription": "Building F",
+          "quantity": "Value",
+          "unitPrice": "15.00",
+          "currency": "EUR",
+          "netTotal": "500,00",
+          "vat": "3",
+          "gross": "515.00"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "515 000"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "515 000"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308017",
@@ -102,7 +601,84 @@
       "billedPercent": "[%]",
       "approvalStatus": "Approved",
       "statusState": "Success",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Production Site 2, Liège, Belgium, VAT BE6677889900",
+      "additionalInfo": "Approved quotation data.",
+      "serviceDateFrom": "01/03/2025",
+      "serviceDateTo": "03/03/2025",
+      "eventName": "Approved Event",
+      "customerPoNum": "5559753426",
+      "currency": "EUR",
+      "buyerReference": "Approved buyer reference",
+      "attachments": [
+        {
+          "name": "Approval Document.ext",
+          "selected": true
+        },
+        {
+          "name": "Billing Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.7.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "Production Site",
+          "quantity": "Value",
+          "unitPrice": "11.25",
+          "currency": "EUR",
+          "netTotal": "400,00",
+          "vat": "3",
+          "gross": "412.00"
+        },
+        {
+          "wbs": "BE.C0000002.7.2",
+          "wbsDescription": "Additional description :",
+          "article": "Consulting",
+          "articleDescription": "Production Site",
+          "quantity": "Value",
+          "unitPrice": "14.75",
+          "currency": "EUR",
+          "netTotal": "600,00",
+          "vat": "3",
+          "gross": "618.00"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "412 000"
+        },
+        {
+          "label": "Item #2",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "618 000"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "1 030 000"
+        }
+      ]
     },
     {
       "qNumber": "BEQ308018",
@@ -115,7 +691,84 @@
       "billedPercent": "[%]",
       "approvalStatus": "Sales Order",
       "statusState": "Information",
-      "date": "17/08/2022"
+      "date": "17/08/2022",
+      "profitCenter": "BE000060 - J&J FM PC",
+      "soldToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "billToCustomer": "2000012345 - Johnson & Johnson Innovative Medicine",
+      "contactEmail": "FirstName.lastname@company.com",
+      "epmContract": "BE.C000001",
+      "soldToName": "Johnson & Johnson Innovative Medicine",
+      "soldToAddress": "Avenue Building 10",
+      "soldToCity": "Brussels",
+      "soldToVat": "BE0123456789",
+      "billToName": "Johnson & Johnson Innovative Medicine",
+      "billToAddress": "Finance Office 20",
+      "billToCity": "Antwerp",
+      "billToVat": "BE9876543210",
+      "shipToFullAddress": "Johnson & Johnson Innovative Medicine, Distribution Hub 9, Namur, Belgium, VAT BE7788990011",
+      "additionalInfo": "Sales Order already created for this quotation.",
+      "serviceDateFrom": "04/03/2025",
+      "serviceDateTo": "06/03/2025",
+      "eventName": "Sales Order Event",
+      "customerPoNum": "5559753427",
+      "currency": "EUR",
+      "buyerReference": "Sales order buyer reference",
+      "attachments": [
+        {
+          "name": "Sales Order Confirmation.ext",
+          "selected": true
+        },
+        {
+          "name": "Customer Approval.ext",
+          "selected": true
+        }
+      ],
+      "items": [
+        {
+          "wbs": "BE.C0000002.8.1",
+          "wbsDescription": "Additional description :",
+          "article": "Security",
+          "articleDescription": "Distribution Hub",
+          "quantity": "Value",
+          "unitPrice": "10.50",
+          "currency": "EUR",
+          "netTotal": "450,00",
+          "vat": "3",
+          "gross": "463.50"
+        },
+        {
+          "wbs": "BE.C0000002.8.2",
+          "wbsDescription": "Additional description :",
+          "article": "Logistics",
+          "articleDescription": "Distribution Hub",
+          "quantity": "Value",
+          "unitPrice": "5.50",
+          "currency": "EUR",
+          "netTotal": "270,00",
+          "vat": "3",
+          "gross": "278.10"
+        }
+      ],
+      "totals": [
+        {
+          "label": "Item #1",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "463 500"
+        },
+        {
+          "label": "Item #2",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "278 100"
+        },
+        {
+          "label": "Total",
+          "totalNet": "Number",
+          "vat": "%",
+          "totalGross": "741 600"
+        }
+      ]
     }
   ]
 }
