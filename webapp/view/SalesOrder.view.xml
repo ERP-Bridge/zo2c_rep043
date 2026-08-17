@@ -2,7 +2,8 @@
     controllerName="zo2c_rep043.controller.SalesOrder"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified">
 
     <Page
         id="_IDGenPage1"
@@ -66,24 +67,21 @@
                         <VBox
                             id="_IDGenVBox6"
                             width="70%">
-
                             <Label
                                 id="_IDGenLabel4"
                                 text="Profit center" />
-
                             <Text
                                 id="_IDGenText17"
-                                text="{selectedQuotation>/profitCenter}" />
+                                text="{selectedQuotation>/profitCenter}"
+                                wrapping="true" />
                         </VBox>
 
                         <VBox
                             id="_IDGenVBox7"
                             width="20%">
-
                             <Label
                                 id="_IDGenLabel5"
                                 text="Customer Approval" />
-
                             <Input
                                 id="_IDGenInput"
                                 value="{selectedQuotation>/approvalStatus}"
@@ -107,46 +105,44 @@
                             <VBox
                                 id="_IDGenVBox9"
                                 width="22%">
-
                                 <Label
                                     id="_IDGenLabel6"
                                     text="Sold to customer" />
-
                                 <Text
                                     id="_IDGenText19"
-                                    text="{selectedQuotation>/soldToCustomer}" />
+                                    text="{selectedQuotation>/soldToCustomer}"
+                                    wrapping="true" />
                             </VBox>
 
                             <VBox
                                 id="_IDGenVBox10"
                                 width="22%">
-
                                 <Label
                                     id="_IDGenLabel7"
                                     text="Bill to customer" />
-
                                 <Text
                                     id="_IDGenText20"
-                                    text="{selectedQuotation>/billToCustomer}" />
+                                    text="{selectedQuotation>/billToCustomer}"
+                                    wrapping="true" />
                             </VBox>
 
                             <VBox
                                 id="_IDGenVBox11"
                                 width="22%">
-
                                 <Label
                                     id="_IDGenLabel8"
                                     text="E-mail of contact" />
-
                                 <Text
                                     id="_IDGenText21"
-                                    text="{selectedQuotation>/contactEmail}" />
+                                    text="{selectedQuotation>/contactEmail}"
+                                    wrapping="true" />
                             </VBox>
 
+                            <!-- Belgium: show EPM contract -->
                             <VBox
                                 id="_IDGenVBox25"
-                                width="22%">
-
+                                width="22%"
+                                visible="{selectedQuotation>/showEpmContract}">
                                 <Label
                                     id="_IDGenLabel9"
                                     text="EPM contract" />
@@ -170,6 +166,25 @@
                                         press=".onToggleCustomerDetails" />
                                 </HBox>
                             </VBox>
+
+                            <!-- Italy: hide EPM contract but keep eye button -->
+                            <VBox
+                                id="_IDGenVBox25ItalyEye"
+                                width="5%"
+                                visible="{= !${selectedQuotation>/showEpmContract} }">
+                                <Label
+                                    id="_IDGenLabel9Italy"
+                                    text="" />
+                                <Button
+                                    id="_IDGenButton11Italy"
+                                    icon="{
+                                        path: 'uiModel>/customerDetailsVisible',
+                                        formatter: '.formatEyeIcon'
+                                    }"
+                                    type="Emphasized"
+                                    press=".onToggleCustomerDetails" />
+                            </VBox>
+
                         </HBox>
 
                         <HBox
@@ -181,57 +196,54 @@
                             <VBox
                                 id="_IDGenVBox26"
                                 width="30%">
-
                                 <Label
                                     id="_IDGenLabel15"
                                     text="Sold to:" />
-
                                 <Text
                                     id="_IDGenText84"
-                                    text="{selectedQuotation>/soldToName}" />
-
+                                    text="{selectedQuotation>/soldToName}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText85"
-                                    text="{selectedQuotation>/soldToAddress}" />
-
+                                    text="{selectedQuotation>/soldToAddress}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText86"
-                                    text="{selectedQuotation>/soldToCity}" />
-
+                                    text="{selectedQuotation>/soldToCity}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText87"
-                                    text="{selectedQuotation>/soldToVat}" />
+                                    text="{selectedQuotation>/soldToVat}"
+                                    wrapping="true" />
                             </VBox>
 
                             <VBox
                                 id="_IDGenVBox27"
                                 width="30%">
-
                                 <Label
                                     id="_IDGenLabel16"
                                     text="Bill to:" />
-
                                 <Text
                                     id="_IDGenText88"
-                                    text="{selectedQuotation>/billToName}" />
-
+                                    text="{selectedQuotation>/billToName}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText89"
-                                    text="{selectedQuotation>/billToAddress}" />
-
+                                    text="{selectedQuotation>/billToAddress}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText90"
-                                    text="{selectedQuotation>/billToCity}" />
-
+                                    text="{selectedQuotation>/billToCity}"
+                                    wrapping="true" />
                                 <Text
                                     id="_IDGenText91"
-                                    text="{selectedQuotation>/billToVat}" />
+                                    text="{selectedQuotation>/billToVat}"
+                                    wrapping="true" />
                             </VBox>
 
                             <VBox
                                 id="_IDGenVBox28"
-                                width="30%">
-
+                                width="35%">
                                 <Label
                                     id="_IDGenLabel17"
                                     text="Ship to:" />
@@ -239,14 +251,22 @@
                                 <ComboBox
                                     id="_IDGenComboBox"
                                     width="100%"
-                                    selectedKey="1"
+                                    selectedKey="{uiModel>/selectedShipToKey}"
+                                    selectionChange=".onShipToChange"
                                     items="{selectedQuotation>/shipToOptions}">
 
                                     <core:Item
                                         key="{selectedQuotation>key}"
                                         text="{selectedQuotation>text}" />
                                 </ComboBox>
+
+                                <Text
+                                    id="_IDGenShipToFullAddressText"
+                                    text="{uiModel>/selectedShipToAddress}"
+                                    wrapping="true"
+                                    class="sapUiTinyMarginTop" />
                             </VBox>
+
                         </HBox>
                     </VBox>
                 </Panel>
@@ -279,11 +299,9 @@
                             <VBox
                                 id="_IDGenVBox13"
                                 width="14%">
-
                                 <Label
                                     id="_IDGenLabel10"
                                     text="Service date from" />
-
                                 <Text
                                     id="_IDGenText18"
                                     text="{selectedQuotation>/serviceDateFrom}" />
@@ -292,11 +310,9 @@
                             <VBox
                                 id="_IDGenVBox14"
                                 width="14%">
-
                                 <Label
                                     id="_IDGenLabel11"
                                     text="Service date to" />
-
                                 <Text
                                     id="_IDGenText22"
                                     text="{selectedQuotation>/serviceDateTo}" />
@@ -305,11 +321,9 @@
                             <VBox
                                 id="_IDGenVBox15"
                                 width="18%">
-
                                 <Label
                                     id="_IDGenLabel12"
                                     text="Event Name" />
-
                                 <Text
                                     id="_IDGenText23"
                                     text="{selectedQuotation>/eventName}" />
@@ -318,11 +332,9 @@
                             <VBox
                                 id="_IDGenVBox16"
                                 width="18%">
-
                                 <Label
                                     id="_IDGenLabel13"
                                     text="Customer PO num" />
-
                                 <Text
                                     id="_IDGenText24"
                                     text="{selectedQuotation>/customerPoNum}" />
@@ -331,11 +343,9 @@
                             <VBox
                                 id="_IDGenVBox29"
                                 width="12%">
-
                                 <Label
                                     id="_IDGenLabel18"
                                     text="Currency" />
-
                                 <Text
                                     id="_IDGenText25"
                                     text="{selectedQuotation>/currency}" />
@@ -344,7 +354,6 @@
                             <VBox
                                 id="_IDGenVBox30"
                                 width="5%">
-
                                 <Button
                                     id="_IDGenButton12"
                                     icon="{
@@ -375,14 +384,21 @@
                 <!-- Attachments -->
                 <Panel
                     id="_IDGenPanel5"
-                    headerText="Attachments"
-                    class="sapUiMediumMarginTop">
+                    class="sapUiMediumMarginTop salesOrderAttachmentPanel">
 
                     <VBox id="_IDGenVBox32">
 
                         <HBox
-                            id="_IDGenHBox6"
-                            justifyContent="End">
+                            id="attachmentHeaderHBox"
+                            width="100%"
+                            alignItems="Center"
+                            justifyContent="SpaceBetween"
+                            class="salesOrderAttachmentHeader">
+
+                            <Title
+                                id="attachmentHeaderTitle"
+                                text="{path: 'selectedQuotation>/attachments', formatter: '.formatAttachmentsTitle'}"
+                                level="H3" />
 
                             <Button
                                 id="_IDGenButton13"
@@ -394,47 +410,95 @@
                                 press=".onToggleAttachments" />
                         </HBox>
 
-                        <Text
-                            id="_IDGenText93"
-                            text="Select the documents you wish to share with your contacts."
-                            class="sapUiSmallMarginTop"
-                            visible="{uiModel>/attachmentsVisible}" />
+                        <VBox
+                            id="attachmentContentVBox"
+                            visible="{uiModel>/attachmentsVisible}"
+                            class="salesOrderAttachmentContent">
 
-                        <HBox
-                            id="_IDGenHBox13"
-                            justifyContent="SpaceBetween"
-                            class="sapUiMediumMarginTop"
-                            visible="{uiModel>/attachmentsVisible}">
-
-                            <VBox
-                                id="_IDGenVBox33"
-                                width="55%"
-                                items="{selectedQuotation>/attachments}">
-
-                                <CheckBox
-                                    text="{selectedQuotation>name}"
-                                    selected="{selectedQuotation>selected}" />
-                            </VBox>
+                            <Text
+                                id="_IDGenText93"
+                                text="Select the documents you wish to share with your contacts."
+                                wrapping="true"
+                                class="salesOrderAttachmentHint" />
 
                             <HBox
-                                id="_IDGenHBox14"
-                                width="40%">
+                                id="_IDGenHBox13"
+                                width="100%"
+                                justifyContent="SpaceBetween"
+                                alignItems="Start"
+                                class="salesOrderAttachmentMainRow">
 
-                                <Input
-                                    id="_IDGenInput7"
-                                    value="Additional document.jpg"
-                                    width="70%" />
+                                <VBox
+                                    id="_IDGenVBox33"
+                                    width="72%">
 
-                                <Button
-                                    id="_IDGenButton21"
-                                    icon="sap-icon://search" />
+                                    <List
+                                        id="attachmentList"
+                                        showSeparators="None"
+                                        items="{selectedQuotation>/attachments}"
+                                        class="salesOrderAttachmentList">
 
-                                <Button
-                                    id="_IDGenButton22"
-                                    text="Upload"
-                                    type="Emphasized" />
+                                        <CustomListItem>
+                                            <HBox
+                                                id="attachmentRowHBox"
+                                                width="100%"
+                                                alignItems="Center"
+                                                justifyContent="Start"
+                                                class="salesOrderAttachmentRow">
+
+                                                <CheckBox
+                                                    selected="{selectedQuotation>selected}"
+                                                    class="salesOrderAttachmentCheckBox" />
+
+                                                <Link
+                                                    text="{selectedQuotation>name}"
+                                                    wrapping="false"
+                                                    press=".onPreviewAttachment"
+                                                    class="salesOrderAttachmentLink" />
+
+                                                <Button
+                                                    icon="sap-icon://show"
+                                                    type="Transparent"
+                                                    tooltip="Preview"
+                                                    press=".onPreviewAttachment"
+                                                    class="salesOrderAttachmentIcon" />
+
+                                                <Button
+                                                    icon="sap-icon://delete"
+                                                    type="Transparent"
+                                                    tooltip="Remove"
+                                                    press=".onDeleteAttachment"
+                                                    class="salesOrderAttachmentIcon" />
+
+                                            </HBox>
+                                        </CustomListItem>
+                                    </List>
+                                </VBox>
+
+                                <HBox
+    id="_IDGenHBox14"
+    width="38%"
+    alignItems="Center"
+    justifyContent="End"
+    class="salesOrderUploadArea">
+
+    <u:FileUploader
+        id="attachmentFileUploader"
+        width="24rem"
+        buttonText="Browse"
+        placeholder="Choose attachment"
+        sameFilenameAllowed="true"
+        change=".onAttachmentFileChange" />
+
+    <Button
+        id="_IDGenButton22"
+        text="Upload"
+        type="Emphasized"
+        press=".onUploadAttachment"
+        class="sapUiTinyMarginBegin" />
+</HBox>
                             </HBox>
-                        </HBox>
+                        </VBox>
                     </VBox>
                 </Panel>
 
@@ -530,7 +594,6 @@
                                         <Text
                                             id="_IDGenText35"
                                             text="{selectedQuotation>wbs}" />
-
                                         <Text
                                             id="_IDGenText36"
                                             text="{selectedQuotation>wbsDescription}" />
@@ -540,7 +603,6 @@
                                         <Text
                                             id="_IDGenText37"
                                             text="{selectedQuotation>article}" />
-
                                         <Text
                                             id="_IDGenText38"
                                             text="{selectedQuotation>articleDescription}" />

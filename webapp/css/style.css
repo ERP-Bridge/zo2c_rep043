@@ -119,3 +119,98 @@
 .sapMDialogBlockLayerInit {
     background-color: #000000 !important;
 }
+
+/* Sales Order attachment section */
+.salesOrderAttachmentPanel .sapMPanelContent {
+    padding: 0.75rem 1rem 1rem 1rem !important;
+}
+
+.salesOrderAttachmentHeader {
+    border-bottom: 1px solid #c8d0d8;
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.55rem;
+}
+
+.salesOrderAttachmentHeader .sapMTitle {
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: #1d2733 !important;
+}
+
+.salesOrderAttachmentContent {
+    padding-top: 0.2rem;
+}
+
+.salesOrderAttachmentHint {
+    color: #425b76;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.salesOrderAttachmentMainRow {
+    min-height: 7rem;
+}
+
+.salesOrderAttachmentList {
+    background-color: transparent !important;
+    width: 100%;
+}
+
+.salesOrderAttachmentList .sapMLIB {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.salesOrderAttachmentRow {
+    min-height: 2.35rem;
+    padding: 0.15rem 0;
+}
+
+.salesOrderAttachmentCheckBox {
+    margin-right: 0.25rem;
+}
+
+.salesOrderAttachmentLink {
+    min-width: 18rem;
+    max-width: 24rem;
+    margin-right: 0.25rem;
+    font-size: 1rem;
+}
+
+.salesOrderAttachmentIcon {
+    min-width: 2rem !important;
+    margin-left: 0.05rem;
+}
+
+.salesOrderAttachmentIcon .sapMBtnInner {
+    padding-left: 0.2rem !important;
+    padding-right: 0.2rem !important;
+}
+
+.salesOrderUploadArea {
+    gap: 0.35rem;
+}
+
+.salesOrderUploadArea .sapUiFup {
+    max-width: 100%;
+}
+
+/* Wider file picker in attachment upload area */
+.salesOrderUploadArea {
+    gap: 0.5rem;
+    min-width: 30rem;
+}
+
+.salesOrderUploadArea .sapUiFup {
+    width: 24rem !important;
+    max-width: 24rem !important;
+}
+
+.salesOrderUploadArea .sapUiFupGroup {
+    width: 24rem !important;
+}
+
+.salesOrderUploadArea .sapMInputBase {
+    width: 24rem !important;
+}

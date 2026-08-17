@@ -1,7 +1,9 @@
+
 <mvc:View
     controllerName="zo2c_rep043.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
 
     <Page
         id="view1Page"
@@ -34,7 +36,6 @@
                     </headerToolbar>
 
                     <content>
-
                         <HBox
                             id="view1SearchHBox"
                             width="100%"
@@ -43,19 +44,27 @@
 
                             <VBox
                                 id="view1CustomerBox"
-                                width="19%">
+                                width="24%">
                                 <Label
                                     id="view1CustomerLabel"
                                     text="Customer" />
-                                <SearchField
-                                    id="view1CustomerSearch"
+
+                                <ComboBox
+                                    id="view1CustomerComboBox"
                                     width="100%"
-                                    placeholder="Code + name" />
+                                    selectedKey="{customerFilterModel>/selectedCustomerKey}"
+                                    selectionChange=".onCustomerFilterChange"
+                                    items="{customerFilterModel>/customers}">
+
+                                    <core:Item
+                                        key="{customerFilterModel>key}"
+                                        text="{customerFilterModel>text}" />
+                                </ComboBox>
                             </VBox>
 
                             <VBox
                                 id="view1SoldToPartyBox"
-                                width="19%">
+                                width="18%">
                                 <Label
                                     id="view1SoldToPartyLabel"
                                     text="Sold to party" />
@@ -67,7 +76,7 @@
 
                             <VBox
                                 id="view1BillToPartyBox"
-                                width="19%">
+                                width="18%">
                                 <Label
                                     id="view1BillToPartyLabel"
                                     text="Bill to party" />
@@ -79,7 +88,7 @@
 
                             <VBox
                                 id="view1ShipToPartyBox"
-                                width="19%">
+                                width="18%">
                                 <Label
                                     id="view1ShipToPartyLabel"
                                     text="Ship to party" />
@@ -91,7 +100,7 @@
 
                             <VBox
                                 id="view1PoNumberBox"
-                                width="19%">
+                                width="18%">
                                 <Label
                                     id="view1PoNumberLabel"
                                     text="PO Number" />
@@ -102,9 +111,7 @@
                             </VBox>
 
                         </HBox>
-
                     </content>
-
                 </Panel>
 
                 <!-- Action Buttons -->
@@ -129,7 +136,6 @@
                         enabled="false"
                         press=".onCreateSalesOrder"
                         class="sapUiTinyMarginBegin" />
-
                 </Toolbar>
 
                 <!-- Table -->
@@ -144,7 +150,6 @@
                     items="{quotationModel>/quotations}">
 
                     <columns>
-
                         <Column
                             id="view1QNumberColumn"
                             width="120px">
@@ -236,16 +241,12 @@
                                 id="view1ActionsColumnText"
                                 text="Actions" />
                         </Column>
-
                     </columns>
 
                     <items>
-
                         <ColumnListItem id="view1QuotationRow">
-
                             <cells>
 
-                                <!-- No press event here. Clicking quotation number will NOT navigate now. -->
                                 <Link
                                     id="view1QNumberLink"
                                     text="{quotationModel>qNumber}"
@@ -328,21 +329,15 @@
                                         id="view1RowShowButton"
                                         icon="sap-icon://show"
                                         type="Transparent" />
-
                                 </HBox>
 
                             </cells>
-
                         </ColumnListItem>
-
                     </items>
-
                 </Table>
 
             </VBox>
-
         </content>
-
     </Page>
-
 </mvc:View>
+

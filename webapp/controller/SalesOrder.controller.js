@@ -17,7 +17,10 @@ sap.ui.define([
             var oUiModel = new JSONModel({
                 customerDetailsVisible: true,
                 serviceDetailsVisible: true,
-                attachmentsVisible: true
+                attachmentsVisible: true,
+                selectedShipToKey: "",
+                selectedShipToAddress: "",
+                selectedAttachmentName: ""
             });
 
             this.getView().setModel(oUiModel, "uiModel");
@@ -44,8 +47,146 @@ sap.ui.define([
                 return oRow.qNumber === sQuotation;
             });
 
-            var oJSON = new JSONModel(oSelected || {});
+            if (!oSelected) {
+                oSelected = {};
+            }
+
+            if (!oSelected.shipToOptions || oSelected.shipToOptions.length === 0) {
+                oSelected.shipToOptions = [
+                    {
+                        key: "1",
+                        text: "No ship-to address maintained"
+                    }
+                ];
+            }
+
+            if (!oSelected.attachments) {
+                oSelected.attachments = [];
+            }
+
+            if (!oSelected.items) {
+                oSelected.items = [];
+            }
+
+            if (!oSelected.totals) {
+                oSelected.totals = [];
+            }
+
+            var oJSON = new JSONModel(oSelected);
             this.getView().setModel(oJSON, "selectedQuotation");
+
+            var oUiModel = this.getView().getModel("uiModel");
+
+            oUiModel.setProperty("/selectedShipToKey", oSelected.shipToOptions[0].key);
+            oUiModel.setProperty("/selectedShipToAddress", oSelected.shipToOptions[0].text);
+            oUiModel.setProperty("/selectedAttachmentName", "");
+        },
+
+        formatAttachmentsTitle: function (aAttachments) {
+            var iCount = Array.isArray(aAttachments) ? aAttachments.length : 0;
+            return "Attachments (" + iCount + ")";
+        },
+
+        onShipToChange: function (oEvent) {
+            var oSelectedItem = oEvent.getParameter("selectedItem");
+
+            if (!oSelectedItem) {
+                return;
+            }
+
+            var oUiModel = this.getView().getModel("uiModel");
+
+            oUiModel.setProperty("/selectedShipToKey", oSelectedItem.getKey());
+            oUiModel.setProperty("/selectedShipToAddress", oSelectedItem.getText());
+        },
+
+        onAttachmentFileChange: function (oEvent) {
+            var aFiles = oEvent.getParameter("files");
+            var sFileName = "";
+
+            if (aFiles && aFiles.length > 0) {
+                sFileName = aFiles[0].name;
+            } else {
+                sFileName = oEvent.getParameter("newValue") || "";
+            }
+
+            var oUiModel = this.getView().getModel("uiModel");
+            oUiModel.setProperty("/selectedAttachmentName", sFileName);
+        },
+
+        onUploadAttachment: function () {
+            var oUiModel = this.getView().getModel("uiModel");
+            var sFileName = oUiModel.getProperty("/selectedAttachmentName");
+
+            if (!sFileName) {
+                MessageToast.show("Please choose a file first.");
+                return;
+            }
+
+            var oSelectedQuotationModel = this.getView().getModel("selectedQuotation");
+            var aAttachments = oSelectedQuotationModel.getProperty("/attachments") || [];
+
+            var bAlreadyExists = aAttachments.some(function (oAttachment) {
+                return oAttachment.name === sFileName;
+            });
+
+            if (bAlreadyExists) {
+                MessageToast.show("This attachment is already added.");
+                return;
+            }
+
+            aAttachments.push({
+                name: sFileName,
+                selected: true,
+                uploaded: true
+            });
+
+            oSelectedQuotationModel.setProperty("/attachments", aAttachments);
+            oUiModel.setProperty("/selectedAttachmentName", "");
+
+            var oFileUploader = this.byId("attachmentFileUploader");
+
+            if (oFileUploader) {
+                oFileUploader.clear();
+            }
+
+            MessageToast.show("Attachment added: " + sFileName);
+        },
+
+        onDeleteAttachment: function (oEvent) {
+            var oSource = oEvent.getSource();
+            var oContext = oSource.getBindingContext("selectedQuotation");
+
+            if (!oContext) {
+                return;
+            }
+
+            var sPath = oContext.getPath();
+            var iIndex = parseInt(sPath.split("/").pop(), 10);
+
+            var oSelectedQuotationModel = this.getView().getModel("selectedQuotation");
+            var aAttachments = oSelectedQuotationModel.getProperty("/attachments") || [];
+
+            if (iIndex >= 0 && iIndex < aAttachments.length) {
+                var sDeletedName = aAttachments[iIndex].name;
+
+                aAttachments.splice(iIndex, 1);
+                oSelectedQuotationModel.setProperty("/attachments", aAttachments);
+
+                MessageToast.show("Attachment removed: " + sDeletedName);
+            }
+        },
+
+        onPreviewAttachment: function (oEvent) {
+            var oSource = oEvent.getSource();
+            var oContext = oSource.getBindingContext("selectedQuotation");
+
+            if (!oContext) {
+                return;
+            }
+
+            var sName = oContext.getProperty("name");
+            MessageToast.show("Preview selected: " + sName);
         },
 
         onToggleCustomerDetails: function () {
@@ -149,7 +290,7 @@ sap.ui.define([
                             items: [
                                 new Text({
                                     width: "100%",
-                                    text: "If you return to previous screen without saving data, you will loose the information entered for this document."
+                                    text: "If you return to previous screen without saving data, you will lose the information entered for this document."
                                 }).addStyleClass("figmaDialogText")
                             ]
                         }).addStyleClass("figmaDialogContent")
